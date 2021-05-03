@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify'
 
-import { TenantController } from '../modules/tenant/tenant.controller'
+import { TenantController } from '@modulos/tenant/tenant.controller'
 
 const tenant = new TenantController()
 
