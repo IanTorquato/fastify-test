@@ -3,21 +3,21 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "baseUrl": "./",
-    "target": "es2017",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "outDir": "./dist",
-    "rootDir": "./",
-    "strict": true,
-    "esModuleInterop": true,
-    "removeComments": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "forceConsistentCasingInFileNames": true,
     "paths": {
       "@modulos/*": [
         "./src/modules/*"
       ],
-    }
+    },
+    "removeComments": true,
+    "rootDir": "./",
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "es2017",
   },
   "exclude": [
     ".vscode",
