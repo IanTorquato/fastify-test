@@ -1,17 +1,12 @@
-import fast from 'fastify'
-const fastify = fast({ logger: true })
+import 'dotenv/config'
 
-fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
-})
+import { server } from './app'
 
-const start = async () => {
+(async () => {
   try {
-    await fastify.listen(3333)
+    await server.listen(process.env.APP_PORT)
   } catch (err) {
-    fastify.log.error(err)
+    server.log.error(err)
     process.exit(1)
   }
-}
-
-start()
+})()
