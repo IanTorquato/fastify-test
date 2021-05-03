@@ -1,6 +1,6 @@
 import { FastifyReply, FastifyRequest } from 'fastify'
 
-import { TenantService } from './service'
+import { TenantService } from './tenant.service'
 
 export class TenantController {
   async create(request: FastifyRequest, reply: FastifyReply) {

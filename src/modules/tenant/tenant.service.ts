@@ -1,4 +1,4 @@
-import { knexConnection } from '../../database/connection'
+import { knexConnection } from '../../database/database.connection'
 
 export class TenantService {
   async create(createTenant: any) {
