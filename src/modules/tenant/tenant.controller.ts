@@ -14,4 +14,13 @@ export class TenantController {
 
     return await reply.status(201).send(await tenantService.find())
   }
+
+  async findOneById(request: FastifyRequest, reply: FastifyReply) {
+    const tenantService = new TenantService()
+    const { id } = request.params as any
+
+    return await reply.status(201).send(
+      await tenantService.findOneById(id)
+    )
+  }
 }
