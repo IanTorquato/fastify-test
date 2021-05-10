@@ -6,12 +6,12 @@ import { CustomExceptionError } from '../../exceptions/custom-exception.error';
 const tenantProvider = new TenantProvider();
 
 export class TenantService {
-  async create({ nome, email }: CreateTenantDto): Promise<FindTenantDto> {
-    if (Number((await tenantProvider.countEmailExist(email)).count)) {
+  async create(data: CreateTenantDto): Promise<FindTenantDto> {
+    if (Number((await tenantProvider.countEmailExist(data.email)).count)) {
       throw new CustomExceptionError('E-mail já cadastrado', 409);
     }
 
-    return tenantProvider.insertTenant(nome, email);
+    return tenantProvider.insertTenant(data);
   }
 
   async find(): Promise<FindTenantDto[]> {
