@@ -1,4 +1,3 @@
-/* Visit https://aka.ms/tsconfig.json to read more about this file */
 {
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
@@ -10,14 +9,14 @@
     "paths": {
       "@modulos/*": [
         "./src/modules/*"
-      ],
+      ]
     },
     "removeComments": true,
     "rootDir": "./",
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2017",
+    "target": "es2017"
   },
   "exclude": [
     ".vscode",
