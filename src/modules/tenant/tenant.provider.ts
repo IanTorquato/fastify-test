@@ -1,21 +1,20 @@
-import { knexConnection } from '../../database/database.connection'
-import { FindTenantDto } from '@modulos/tenant/dto/find-tenant.dto'
+import { FindTenantDto } from '@modulos/tenant/dto/find-tenant.dto';
+import { knexConnection } from '../../database/database.connection';
 
 export class TenantProvider {
   async countEmailExist(email: string) {
-    return await knexConnection('tenant').where({ email }).first().count()
+    return knexConnection('tenant').where({ email }).first().count();
   }
 
   async insertTenant(nome: string, email: string): Promise<FindTenantDto> {
-    return (await knexConnection('tenant')
-      .insert({ nome, email }, '*'))[0]
+    return (await knexConnection('tenant').insert({ nome, email }, '*'))[0];
   }
 
   async find(): Promise<FindTenantDto[]> {
-    return await knexConnection('tenant')
+    return knexConnection('tenant');
   }
 
-  async findOneById(id_tenant: number): Promise<FindTenantDto> {
-    return await knexConnection('tenant').where({ id_tenant }).first()
+  async findOneById(idTenant: number): Promise<FindTenantDto> {
+    return knexConnection('tenant').where({ id_tenant: idTenant }).first();
   }
 }

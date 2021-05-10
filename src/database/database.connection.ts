@@ -1,7 +1,7 @@
-import knex from 'knex'
+import knex from 'knex';
 
-import databaseConfig from '../config/database.config'
+import databaseConfig from '../config/database.config';
 
-const knexConnection = knex(databaseConfig)
+const knexConnection = knex(databaseConfig);
 
-export { knexConnection }
+export { knexConnection };

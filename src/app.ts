@@ -1,17 +1,17 @@
-import Fastify, { FastifyInstance } from 'fastify'
+import Fastify, { FastifyInstance } from 'fastify';
 
-import { routes } from './routes'
+import { routes } from './routes';
 
-const server: FastifyInstance = Fastify({ logger: true })
+const server: FastifyInstance = Fastify({ logger: true });
 
 server.setErrorHandler((error, request, reply) => {
-  console.log(error)
+  console.log(error);
 
-  const statusCode = error.statusCode ? error.statusCode : error.validation ? 400 : 500
+  reply
+    .status(error.statusCode || error.validation ? 400 : 500)
+    .send({ error: error.message });
+});
 
-  reply.status(statusCode).send({ error: error.message })
-})
+server.register(routes);
 
-server.register(routes)
-
-export { server }
+export { server };

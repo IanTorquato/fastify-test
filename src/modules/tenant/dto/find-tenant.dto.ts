@@ -1,5 +1,5 @@
-import { Static } from '@sinclair/typebox'
+import { Static } from '@sinclair/typebox';
 
-import { BaseTenantDto } from './base-tenant.dto'
+import { BaseTenantDto } from './base-tenant.dto';
 
-export type FindTenantDto = Static<typeof BaseTenantDto>
+export type FindTenantDto = Static<typeof BaseTenantDto>;

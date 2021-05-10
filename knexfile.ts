@@ -1,11 +1,11 @@
-import 'dotenv/config'
-import { resolve } from 'path'
+import 'dotenv/config';
+import { resolve } from 'path';
 
-import databaseConfig from './src/config/database.config'
+import databaseConfig from './src/config/database.config';
 
 export default {
   ...databaseConfig,
   migrations: {
-    directory: resolve(__dirname, 'src', 'database', 'migrations')
+    directory: resolve(__dirname, 'src', 'database', 'migrations'),
   },
-}
+};
