@@ -1,6 +1,6 @@
 import { CreateTenantDto } from '@modulos/tenant/dto/create-tenant.dto';
 import { FindTenantDto } from '@modulos/tenant/dto/find-tenant.dto';
-import { TenantProvider } from '@modulos/tenant/tenant.provider';
+import { TenantProvider } from '@modulos/tenant/tenant.repository';
 import { CustomExceptionError } from '@erros/custom-exception.error';
 
 const tenantProvider = new TenantProvider();
