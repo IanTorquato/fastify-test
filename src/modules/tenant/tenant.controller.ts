@@ -18,15 +18,23 @@ export class TenantController {
     return reply.status(201).send(await tenantService.create(request.body));
   }
 
-  async find(request: FastifyRequest, reply: FastifyReply): Promise<FindTenantDto[]> {
+  async find(
+    request: FastifyRequest,
+    reply: FastifyReply,
+  ): Promise<FindTenantDto[]> {
     const tenantService = new TenantService();
 
     return reply.status(201).send(await tenantService.find());
   }
 
-  async findOneById(request: FastifyRequest<IParams>, reply: FastifyReply): Promise<FindTenantDto> {
+  async findOneById(
+    request: FastifyRequest<IParams>,
+    reply: FastifyReply,
+  ): Promise<FindTenantDto> {
     const tenantService = new TenantService();
 
-    return reply.status(201).send(await tenantService.findOneById(request.params.id));
+    return reply
+      .status(201)
+      .send(await tenantService.findOneById(request.params.id));
   }
 }

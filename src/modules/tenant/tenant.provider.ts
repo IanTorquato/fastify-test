@@ -3,7 +3,7 @@ import { FindTenantDto } from '@modulos/tenant/dto/find-tenant.dto';
 import { knexConnection } from '../../database/database.connection';
 
 export class TenantProvider {
-  async countEmailExist(email: string) {
+  async countEmailExist(email: string): Promise<{ count: string | number }> {
     return knexConnection('tenant').where({ email }).first().count();
   }
 
