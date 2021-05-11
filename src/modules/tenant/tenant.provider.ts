@@ -1,6 +1,6 @@
 import { CreateTenantDto } from '@modulos/tenant/dto/create-tenant.dto';
 import { FindTenantDto } from '@modulos/tenant/dto/find-tenant.dto';
-import { knexConnection } from '../../database/database.connection';
+import { knexConnection } from '@banco-de-dados/database.connection';
 
 export class TenantProvider {
   async countEmailExist(email: string): Promise<{ count: string | number }> {

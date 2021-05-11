@@ -7,6 +7,15 @@
     "module": "commonjs",
     "outDir": "./dist",
     "paths": {
+      "@banco-de-dados/*": [
+        "./src/database/*"
+      ],
+      "@configuracoes/*": [
+        "./src/config/*"
+      ],
+      "@erros/*": [
+        "./src/exceptions/*"
+      ],
       "@modulos/*": [
         "./src/modules/*"
       ]

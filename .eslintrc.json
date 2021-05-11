@@ -38,6 +38,18 @@
         ],
         "map": [
           [
+            "@banco-de-dados",
+            "./src/database"
+          ],
+          [
+            "@configuracoes",
+            "./src/config"
+          ],
+          [
+            "@erros",
+            "./src/exceptions"
+          ],
+          [
             "@modulos",
             "./src/modules"
           ]
