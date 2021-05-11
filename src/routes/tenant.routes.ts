@@ -9,6 +9,12 @@ const tenant = new TenantController();
 export async function returnTenantRoutes(
   server: FastifyInstance,
 ): Promise<void> {
+  server.use((req: any, res: any, done: any) => {
+    console.log('--> Middleware em todas as rotas <--');
+
+    done();
+  });
+
   server.post('/', { schema: { body: CreateTenantDto } }, tenant.create);
   server.get('/', tenant.find);
   server.get(

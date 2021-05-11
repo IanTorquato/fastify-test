@@ -1,8 +1,11 @@
 import Fastify, { FastifyInstance } from 'fastify';
+import middie from 'middie';
 
 import { routes } from './routes';
 
 const server: FastifyInstance = Fastify({ logger: true });
+
+server.register(middie);
 
 server.setErrorHandler((error, request, reply) => {
   console.log(error);
