@@ -1,4 +1,4 @@
-import knex from 'knex';
+import { knex } from 'knex';
 
 import databaseConfig from '../config/database.config';
 
